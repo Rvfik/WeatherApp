@@ -11,9 +11,13 @@ const getJSONfromAPI = () => {
         .catch(err => console.log(err));
 }
 
+
+
 async function getData() {
     let response = await getJSONfromAPI();
     console.log(response)
+
+
 
     let clouds = response.clouds.all;
     let latitude = response.coord.lat;
@@ -25,8 +29,8 @@ async function getData() {
     let temp_min = Math.floor(response.main.temp_min - 273.15);
     let cityName = response.name;
     let country = response.sys.country;
-    let sunrise = new Date(response.sys.sunrise).toLocaleTimeString();
-    let sunset = new Date(response.sys.sunset).toLocaleTimeString();
+    let sunrise = Unix_timestamp(response.sys.sunrise);
+    let sunset = Unix_timestamp(response.sys.sunset);
     let visibility = response.visibility;
     let description = response.weather[0].description;
     let parameter = response.weather[0].main;
@@ -53,14 +57,22 @@ async function getData() {
     document.getElementById('temp_min').innerText = `temp_min: ${temp_min}° C`
     document.getElementById('cityName').innerText = `cityName: ${cityName}`
     document.getElementById('country').innerText = `country: ${country}`
-    document.getElementById('sunrise').innerText = `sunrise: ${sunrise} nie wiem jeszcze`
-    document.getElementById('sunset').innerText = `sunset: ${sunset} nie wiem jeszcze`
+    document.getElementById('sunrise').innerText = `sunrise: ${sunrise}`
+    document.getElementById('sunset').innerText = `sunset: ${sunset}`
     document.getElementById('visibility').innerText = `visibility: ${visibility} m`
     document.getElementById('description').innerText = `description: ${description}`
     document.getElementById('weatherParameter').innerText = `parameter: ${parameter}`
     document.getElementById('icon').innerText = `icon: ${icon}`
     document.getElementById('windDeg').innerText = `windDeg: ${windDeg}°`
     document.getElementById('windSpeed').innerText = `windSpeed: ${windSpeed}m/s`
+}
+
+function Unix_timestamp(t) {
+    var dt = new Date(t * 1000);
+    var hr = dt.getHours();
+    var m = "0" + dt.getMinutes();
+    var s = "0" + dt.getSeconds();
+    return hr + ':' + m.substr(-2) + ':' + s.substr(-2);
 }
 
 getData()
