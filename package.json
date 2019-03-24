@@ -2,7 +2,7 @@
   "name": "weather-app",
   "version": "1.0.0",
   "description": "Simple weather app using axios",
-  "main": "index.js",
+  "main": "script.js",
   "repository": "git@github.com:Rvfik",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",

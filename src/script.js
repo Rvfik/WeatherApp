@@ -1,23 +1,22 @@
 import axios from 'axios';
 
-const weatherLink = 'http://api.openweathermap.org/data/2.5/weather?q=Wroclaw,pl&APPID=0b72f178992e5ddc7fa93b511b4a5dff';
+const getJSONfromAPI = async () => {
 
-const getJSONfromAPI = () => {
-    return axios.get(weatherLink)
+    document.getElementById('searchErrorMessage').textContent = '';
+    const city = document.getElementById('citySearch').value;
+
+    return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=0b72f178992e5ddc7fa93b511b4a5dff`)
         .then(response => {
-            const res = response.data;
-            return res;   
+            const weather = response.data
+            return weather;
+        }).catch((e) => {
+            document.getElementById('searchErrorMessage').textContent = 'Wrong name of the city was typed'
+            console.log(e)
         })
-        .catch(err => console.log(err));
 }
-
-
 
 async function getData() {
     let response = await getJSONfromAPI();
-    console.log(response)
-
-
 
     let clouds = response.clouds.all;
     let latitude = response.coord.lat;
@@ -41,11 +40,6 @@ async function getData() {
     // let rain3h = response.rain.3h        // Rain volume for the last 3 hours, mm
     // let snow1h = response.snow.1h        // Snow volume for the last 1 hour, mm
     // let snow3h = response.snow.3h        // Snow volume for the last 3 hours, mm
-
-
-
-    
-
 
     document.getElementById('clouds').innerText = `clouds: ${clouds}%`
     document.getElementById('latitude').innerText = `latitude: ${latitude}°`
@@ -76,6 +70,3 @@ function Unix_timestamp(t) {
 }
 
 getData()
-
-
-
