@@ -4,7 +4,7 @@ npm-debug.log
 .DS_Store
 .npm
 *.tgz
-.vscode
+/.vscode
 .npmrc
 
 # IntelliJ
