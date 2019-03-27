@@ -5,7 +5,7 @@ const getJSONfromAPI = async () => {
     document.getElementById('searchErrorMessage').textContent = '';
     const city = document.getElementById('citySearch').value;
 
-    return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=0b72f178992e5ddc7fa93b511b4a5dff`)
+    return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pl&APPID=0b72f178992e5ddc7fa93b511b4a5dff`)
         .then(response => {
             const weather = response.data
             return weather;
@@ -41,24 +41,23 @@ async function getData() {
     // let snow1h = response.snow.1h        // Snow volume for the last 1 hour, mm
     // let snow3h = response.snow.3h        // Snow volume for the last 3 hours, mm
 
-    document.getElementById('clouds').innerText = `clouds: ${clouds}%`
-    document.getElementById('latitude').innerText = `latitude: ${latitude}°`
-    document.getElementById('longitude').innerText = `longitude: ${longitude}°`
-    document.getElementById('humidity').innerText = `humidity: ${humidity}%`
-    document.getElementById('pressure').innerText = `pressure: ${pressure} hPa`
-    document.getElementById('temp').innerText = `temp: ${temp}° C`
-    document.getElementById('temp_max').innerText = `temp_max: ${temp_max}° C`
-    document.getElementById('temp_min').innerText = `temp_min: ${temp_min}° C`
-    document.getElementById('cityName').innerText = `cityName: ${cityName}`
-    document.getElementById('country').innerText = `country: ${country}`
-    document.getElementById('sunrise').innerText = `sunrise: ${sunrise}`
-    document.getElementById('sunset').innerText = `sunset: ${sunset}`
-    document.getElementById('visibility').innerText = `visibility: ${visibility} m`
-    document.getElementById('description').innerText = `description: ${description}`
-    document.getElementById('weatherParameter').innerText = `parameter: ${parameter}`
-    document.getElementById('icon').innerText = `icon: ${icon}`
-    document.getElementById('windDeg').innerText = `windDeg: ${windDeg}°`
-    document.getElementById('windSpeed').innerText = `windSpeed: ${windSpeed}m/s`
+    document.getElementById('clouds').innerText = `${clouds}%`
+    // document.getElementById('latitude').innerText = `latitude: ${latitude}°`
+    // document.getElementById('longitude').innerText = `longitude: ${longitude}°`
+    document.getElementById('humidity').innerText = `${humidity}%`
+    document.getElementById('pressure').innerText = `${pressure} hPa`
+    document.getElementById('temp').innerText = `${temp}° C`
+    document.getElementById('temp_max').innerText = `max ${temp_max}° C min ${temp_min}° C`
+    // document.getElementById('temp_min').innerText = `min ${temp_min}° C`
+    document.getElementById('cityName').innerText = `${cityName}, ${country}`
+    document.getElementById('sunrise').innerText = `${sunrise}`
+    document.getElementById('sunset').innerText = `${sunset}`
+    document.getElementById('visibility').innerText = `${visibility} m`
+    document.getElementById('description').innerText = `${description}`
+    // document.getElementById('weatherParameter').innerText = `parameter: ${parameter}`
+    // document.getElementById('icon').innerText = `icon: ${icon}`
+    document.getElementById('windDeg').innerText = `${windDeg}°`
+    document.getElementById('windSpeed').innerText = `${windSpeed}m/s`
 }
 
 function Unix_timestamp(t) {

@@ -1,37 +1,119 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style/style.css">
-  </head>
-  <body>
 
-    <div id="citySearchBox">
-      <input type="search" id="citySearch" value="wroclaw">
-      <button type="submit" id="citySearchButton">Search city<i class="fab fa-searchengin"></i></button>
-      <div id="searchErrorMessage"></div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+
+  <div id="citySearchBox">
+    <input type="search" id="citySearch" value="wroclaw">
+    <button type="submit" id="citySearchButton">Search city<i class="fab fa-searchengin"></i></button>
+    <div id="searchErrorMessage"></div>
+  </div>
+
+  <div class="temp_box">
+    <div class="container">
+      <div class="description">
+        <h1 id="temp"></h1>
+        <h3 id="cityName"></h3>
+        <h id="country"></h>
+        <!-- <div class="min_max_temp"> -->
+        <p id="temp_max"></p>
+        <!-- <p  id="temp_min"></p> -->
+        <!-- </div> -->
+        <div>
+          <p id="description"></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="details">
+        <h3>Szczegóły</h3>
+        <hr />
+      </div>
+      <div class="reading">
+        <div class="name_reading">
+          <p>Wilgotność</p>
+          <p>Widoczność</p>
+          <p>Zachmurzenie</p>
+        </div>
+        <div class="results">
+          <p id="humidity"></p>
+          <p id="visibility"></p>
+          <p id="clouds"></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="details">
+        <h3>Wiatr i ciśnienie</h3>
+        <hr />
+      </div>
+      <div class="reading">
+        <div class="name_reading">
+          <p>Prędkość</p>
+          <p>Ciśnienie</p>
+          <p>Kierunek</p>
+        </div>
+        <div class="results">
+          <p id="windSpeed"></p>
+          <p id="pressure"></p>
+          <p id="windDeg"></p>
+        </div>
+      </div>
     </div>
 
     <div class="container">
-      <p id="clouds"></p>
-      <p id="latitude"></p>
-      <p id="longitude"></p>
-      <p id="humidity"></p>
-      <p id="pressure"></p>
-      <p id="temp"></p>
-      <p id="temp_max"></p>
-      <p id="temp_min"></p>
-      <p id="cityName"></p>
-      <p id="country"></p>
-      <p id="sunrise"></p>
-      <p id="sunset"></p>
-      <p id="visibility"></p>
-      <p id="description"></p>
-      <p id="weatherParameter"></p>
-      <p id="icon"></p>
-      <p id="windDeg"></p>
-      <p id="windSpeed"></p>
+      <div class="details">
+        <h3>Słońce</h3>
+        <hr />
+      </div>
+      <div class="reading">
+        <div class="name_reading">
+          <p>Wschód</p>
+          <p>Zachód</p>
+        </div>
+        <div class="results">
+          <p id="sunrise"></p>
+          <p id="sunset"></p>
+        </div>
+      </div>
     </div>
-  </body>
-  <script src="/bundle.js"></script>
+  </div>
+
+  </div>
+
+
+
+
+
+  <!-- <p id="clouds"></p>
+    <p id="latitude"></p>
+    <p id="longitude"></p>
+    <p id="humidity"></p>
+    <p id="pressure"></p>
+    <p id="temp"></p>
+    <p id="temp_max"></p>
+    <p id="temp_min"></p>
+    <p id="cityName"></p>
+    <p id="country"></p>
+    <p id="sunrise"></p>
+    <p id="sunset"></p>
+    <p id="visibility"></p>
+    <p id="description"></p>
+    <p id="weatherParameter"></p>
+    <p id="icon"></p>
+    <p id="windDeg"></p>
+    <p id="windSpeed"></p> -->
+  </div>
+</body>
+<script src="/bundle.js"></script>
+
 </html>
