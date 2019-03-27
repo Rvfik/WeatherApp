@@ -4,6 +4,8 @@ npm-debug.log
 .DS_Store
 .npm
 *.tgz
+.vscode
+.npmrc
 
 # IntelliJ
 *.iml
