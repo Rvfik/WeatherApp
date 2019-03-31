@@ -7,12 +7,12 @@ body {
     padding-top: 1em;
     overflow-y: scroll;
 
-
     /* border: 2px solid red; */
 }
 
 #citySearchBox {
-    text-align: center;
+    display: inline-flex;
+    width: 20em;
 
     /* border: 2px solid rgb(150, 1, 76); */
 }
@@ -20,6 +20,7 @@ body {
 .temp_box {
     justify-items: center;
     justify-content: center;
+    justify-self: center;
     padding-block-start: 1em;
 
     /* border: 2px solid rgb(128, 2, 167); */
@@ -30,9 +31,9 @@ body {
     background-color: rgba(131, 130, 130, 0.09);
     border-radius: 0.5em;
     margin: 1em auto;
-        padding-top: 0.1em;
-        padding-left: 1em;
-        padding-bottom: 0.1em;
+    padding-top: 0.1em;
+    padding-left: 1em;
+    padding-bottom: 0.1em;
 
     /* border: 2px solid green; */
 }

@@ -4,18 +4,20 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/style/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
 
-  <div id="citySearchBox">
-    <input type="search" id="citySearch" value="wroclaw">
-    <button type="submit" id="citySearchButton">Search city<i class="fab fa-searchengin"></i></button>
+  <!-- <div id="citySearchBox">
+    <input class="form-control mr-sm-2" id="citySearch" value="wroclaw">
+    <button class="btn btn-outline-success" id="citySearchButton">Szukaj<i class="fab fa-searchengin"></i></button>
     <div id="searchErrorMessage"></div>
-  </div>
+  </div> -->
 
   <div class="temp_box">
-    <div class="container">
+    <div class="container col-11 col-sm-4 col-md-6 col-lg-5 col-xl-4">
       <div class="description">
         <h1 id="temp"></h1>
         <h3 id="cityName"></h3>
@@ -30,8 +32,7 @@
       </div>
     </div>
 
-
-    <div class="container">
+    <div class="container col-11 col-sm-3 col-md-5 col-lg-4 col-xl-3">
       <div class="details">
         <h3>Szczegóły</h3>
         <hr />
@@ -48,10 +49,7 @@
           <p id="clouds"></p>
         </div>
       </div>
-    </div>
-
-
-    <div class="container">
+      <hr />
       <div class="details">
         <h3>Wiatr i ciśnienie</h3>
         <hr />
@@ -68,9 +66,7 @@
           <p id="windDeg"></p>
         </div>
       </div>
-    </div>
-
-    <div class="container">
+      <hr />
       <div class="details">
         <h3>Słońce</h3>
         <hr />
@@ -85,9 +81,8 @@
           <p id="sunset"></p>
         </div>
       </div>
+      </div>
     </div>
-  </div>
-
   </div>
 
 
