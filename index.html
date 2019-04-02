@@ -9,80 +9,78 @@
 </head>
 
 <body>
+  <div class="SearchBox">
+    <div class="citySearchBox">
+      <input class="form-control mr-sm-2" id="citySearch" placeholder="Type your city here...">
+      <button class="btn btn-outline-success" id="citySearchButton">Szukaj<i class="fab fa-searchengin"></i></button>
+      <div id="searchErrorMessage"></div>
+    </div>
+  </div>
 
-  <!-- <div id="citySearchBox">
-    <input class="form-control mr-sm-2" id="citySearch" value="wroclaw">
-    <button class="btn btn-outline-success" id="citySearchButton">Szukaj<i class="fab fa-searchengin"></i></button>
-    <div id="searchErrorMessage"></div>
-  </div> -->
+  <div class="container col-11 col-sm-4 col-md-6 col-lg-5 col-xl-4">
+    <h1 id="temp"></h1>
+    <h3 id="cityName"></h3>
+    <h id="country"></h>
+    <!-- <div class="min_max_temp"> -->
+    <p id="temp_max"></p>
+    <!-- <p  id="temp_min"></p> -->
+    <!-- </div> -->
+    <div>
+      <p id="description"></p>
+    </div>
+  </div>
 
-  <div class="temp_box">
-    <div class="container col-11 col-sm-4 col-md-6 col-lg-5 col-xl-4">
-      <div class="description">
-        <h1 id="temp"></h1>
-        <h3 id="cityName"></h3>
-        <h id="country"></h>
-        <!-- <div class="min_max_temp"> -->
-        <p id="temp_max"></p>
-        <!-- <p  id="temp_min"></p> -->
-        <!-- </div> -->
-        <div>
-          <p id="description"></p>
-        </div>
+  <div class="container col-11 col-sm-3 col-md-5 col-lg-4 col-xl-3">
+    <div class="details">
+      <h3>Details</h3>
+      <hr />
+    </div>
+    <div class="reading">
+      <div class="name_reading">
+        <p>Humidity</p>
+        <p>Visibility</p>
+        <p>Clouds</p>
+      </div>
+      <div class="results">
+        <p id="humidity"></p>
+        <p id="visibility"></p>
+        <p id="clouds"></p>
       </div>
     </div>
-
-    <div class="container col-11 col-sm-3 col-md-5 col-lg-4 col-xl-3">
-      <div class="details">
-        <h3>Szczegóły</h3>
-        <hr />
-      </div>
-      <div class="reading">
-        <div class="name_reading">
-          <p>Wilgotność</p>
-          <p>Widoczność</p>
-          <p>Zachmurzenie</p>
-        </div>
-        <div class="results">
-          <p id="humidity"></p>
-          <p id="visibility"></p>
-          <p id="clouds"></p>
-        </div>
-      </div>
+    <hr />
+    <div class="details">
+      <h3>Wind and pressure</h3>
       <hr />
-      <div class="details">
-        <h3>Wiatr i ciśnienie</h3>
-        <hr />
+    </div>
+    <div class="reading">
+      <div class="name_reading">
+        <p>Speed</p>
+        <p>Pressure</p>
+        <p>Wind direction</p>
       </div>
-      <div class="reading">
-        <div class="name_reading">
-          <p>Prędkość</p>
-          <p>Ciśnienie</p>
-          <p>Kierunek</p>
-        </div>
-        <div class="results">
-          <p id="windSpeed"></p>
-          <p id="pressure"></p>
-          <p id="windDeg"></p>
-        </div>
-      </div>
-      <hr />
-      <div class="details">
-        <h3>Słońce</h3>
-        <hr />
-      </div>
-      <div class="reading">
-        <div class="name_reading">
-          <p>Wschód</p>
-          <p>Zachód</p>
-        </div>
-        <div class="results">
-          <p id="sunrise"></p>
-          <p id="sunset"></p>
-        </div>
-      </div>
+      <div class="results">
+        <p id="windSpeed"></p>
+        <p id="pressure"></p>
+        <p id="windDeg"></p>
       </div>
     </div>
+    <hr />
+    <div class="details">
+      <h3>Sun</h3>
+      <hr />
+    </div>
+    <div class="reading">
+      <div class="name_reading">
+        <p>unrise</p>
+        <p>Sunset</p>
+      </div>
+      <div class="results">
+        <p id="sunrise"></p>
+        <p id="sunset"></p>
+      </div>
+    </div>
+  </div>
+
   </div>
 
 

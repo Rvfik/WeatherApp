@@ -1,11 +1,13 @@
 import axios from 'axios';
 
+document.getElementById('citySearchButton').addEventListener('click', getData)
+
+
 const getJSONfromAPI = async () => {
-
+    const city = document.getElementById('citySearch').value || "Wrocław";
     document.getElementById('searchErrorMessage').textContent = '';
-    const city = document.getElementById('citySearch').value;
 
-    return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pl&APPID=0b72f178992e5ddc7fa93b511b4a5dff`)
+    return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=0b72f178992e5ddc7fa93b511b4a5dff`)
         .then(response => {
             const weather = response.data
             return weather;

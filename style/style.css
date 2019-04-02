@@ -1,30 +1,28 @@
 body {
     background: linear-gradient(to right, #c9d6ff, #e2e2e2);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: 'Montserrat', sans-serif;
-    width: 100vw;
     margin: 0;
     padding-top: 1em;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+
 
     /* border: 2px solid red; */
 }
 
-#citySearchBox {
-    display: inline-flex;
+.SearchBox {
+    display: flex;
+    justify-content: center;
+
+    /* border: 2px solid rgb(76, 253, 91); */
+}
+
+.citySearchBox {
+    display: flex;
     width: 20em;
 
-    /* border: 2px solid rgb(150, 1, 76); */
+    /* border: 2px solid rgb(252, 147, 199); */
 }
 
-.temp_box {
-    justify-items: center;
-    justify-content: center;
-    justify-self: center;
-    padding-block-start: 1em;
-
-    /* border: 2px solid rgb(128, 2, 167); */
-}
 
 .container {
     width: 20em;
@@ -38,10 +36,6 @@ body {
     /* border: 2px solid green; */
 }
 
-.description {
-
-    /* border: 2px solid yellow; */
-}
 
 .min_max_temp {
 
@@ -55,7 +49,7 @@ body {
 
 
 .details {
-    text-align: center;
+    /* text-align: center; */
     padding-top: 0.1em;
 
     /* border: 2px solid rgb(128, 194, 6); */
