@@ -70,3 +70,42 @@ function Unix_timestamp(t) {
 }
 
 getData()
+
+const getForecastfromAPI = async () => {
+    const city = document.getElementById('citySearch').value || "wroclaw";
+
+    return axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=0b72f178992e5ddc7fa93b511b4a5dff`)
+        .then(response => {
+            const forecast = response.data
+            console.log(forecast)
+            return forecast;
+
+        }).catch((e) => {
+            document.getElementById('searchErrorMessage').textContent = 'Wrong name of the city was typed'
+            console.log(e)
+        })
+}
+
+getForecastfromAPI()
+
+async function getForecast() {
+    let response = await getForecastfromAPI();
+
+
+    let tempFiveDays = response.list.filter(el => el.dt_txt.includes("12:00:00"));
+    let tempForecast = tempFiveDays.map(el => el.main.temp)
+    console.log(tempForecast[0])
+
+    let day1 = Math.floor(tempForecast[0] - 273.15);
+    let day2 = Math.floor(tempForecast[1] - 273.15);
+    let day3 = Math.floor(tempForecast[2] - 273.15);
+    let day4 = Math.floor(tempForecast[3] - 273.15);
+    let day5 = Math.floor(tempForecast[4] - 273.15);
+
+    document.getElementById('day1').innerText = `${day1}° C`
+    document.getElementById('day2').innerText = `${day2}° C`
+    document.getElementById('day3').innerText = `${day3}° C`
+    document.getElementById('day4').innerText = `${day4}° C`
+    document.getElementById('day5').innerText = `${day5}° C`
+}
+getForecast()

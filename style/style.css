@@ -10,10 +10,11 @@ body {
 .weatherBox {
     max-width: 360px;
     margin: 0px auto;
+
+    /* border: 2px solid rgb(0, 2, 128); */
 }
 
-.container {
-    width: 20em;
+.temperatureHeader {
     background-color: #3e98e8;
     border-radius: 0.5em;
     padding: 12px;
@@ -47,7 +48,7 @@ body {
 
 .citySearchBox {
     display: flex;
-    width: 20em;
+    width: 100%;
 
     /* border: 2px solid rgb(252, 147, 199); */
 }
@@ -59,27 +60,82 @@ body {
 
 .dataHidden {
     background-color: white;
-    width: 20em;
+    width: 100%;
     line-height: 8px;
     padding: 13px;
     border-radius: 0.5em;
     box-shadow: 0px 1px 4px #a5a5a5;
+
+    /* border: 2px solid rgb(241, 252, 147); */
 }
 
 .dataTitle {
     font-size: 17px;
+    /* border: 2px solid rgb(241, 252, 147); */
 }
 
 .data {
     opacity: 0.5;
+    font-size: 15px;
 }
 
 .sun {
     display: flex;
     justify-content: baseline;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+
+    /* border: 2px solid rgb(241, 252, 147); */
 }
 
 .sunrise {
     margin-right: 25px;
+
+    /* border: 2px solid rgb(26, 121, 116); */
 }
 
+.sunset {
+
+     /* border: 2px solid rgb(26, 121, 116); */
+}
+
+.dataTitle {
+
+    /* border: 2px solid rgb(121, 26, 82); */
+}
+
+
+.fiveDays {
+    display: flex;
+    justify-content: space-around;
+
+    /* border: 2px solid rgb(207, 170, 68); */
+}
+
+.day {
+
+
+    /* border: 2px solid rgb(45, 121, 26); */
+}
+
+.weekDay {
+    display: flex;
+    justify-content: center;
+
+    /* border: 2px solid rgb(147, 240, 252); */
+}
+
+.iconBox {
+
+
+    /* border: 2px solid rgb(87, 9, 122); */
+}
+
+.temperatureDay {
+    padding-top: 15px;
+    opacity: 0.5;
+    font-size: 15px;
+
+    /* border: 2px solid rgb(252, 147, 199); */
+}
