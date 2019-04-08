@@ -2,9 +2,8 @@ import axios from 'axios';
 
 document.getElementById('citySearchButton').addEventListener('click', getData)
 
-
 const getJSONfromAPI = async () => {
-    const city = document.getElementById('citySearch').value || "Wrocław";
+    const city = document.getElementById('citySearch').value || "wroclaw";
     document.getElementById('searchErrorMessage').textContent = '';
 
     return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=0b72f178992e5ddc7fa93b511b4a5dff`)
@@ -55,11 +54,11 @@ async function getData() {
     document.getElementById('sunrise').innerText = `${sunrise}`
     document.getElementById('sunset').innerText = `${sunset}`
     document.getElementById('visibility').innerText = `${visibility} m`
-    document.getElementById('description').innerText = `${description}`
+    // document.getElementById('description').innerText = `${description}`
     // document.getElementById('weatherParameter').innerText = `parameter: ${parameter}`
     // document.getElementById('icon').innerText = `icon: ${icon}`
-    document.getElementById('windDeg').innerText = `${windDeg}°`
-    document.getElementById('windSpeed').innerText = `${windSpeed}m/s`
+    // document.getElementById('windDeg').innerText = `${windDeg}°`
+    document.getElementById('windSpeed').innerText = `${windSpeed} m/s`
 }
 
 function Unix_timestamp(t) {
@@ -67,7 +66,7 @@ function Unix_timestamp(t) {
     var hr = dt.getHours();
     var m = "0" + dt.getMinutes();
     var s = "0" + dt.getSeconds();
-    return hr + ':' + m.substr(-2) + ':' + s.substr(-2);
+    return hr + ':' + m.substr(-2);
 }
 
 getData()

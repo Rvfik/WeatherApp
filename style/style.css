@@ -1,18 +1,47 @@
 body {
-    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+    background: linear-gradient(to right, #e0e3ec, #e2e2e2);
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding-top: 1em;
     /* overflow-y: scroll; */
-
-
     /* border: 2px solid red; */
 }
 
-.SearchBox {
+.weatherBox {
+    max-width: 360px;
+    margin: 0px auto;
+}
+
+.container {
+    width: 20em;
+    background-color: #3e98e8;
+    border-radius: 0.5em;
+    padding: 12px;
+    box-shadow: 0px 1px 4px #a5a5a5;
+
+    /* border: 2px solid green; */
+}
+
+#cityName {
+    color: white;
+    font-size: 25px;
+}
+
+#temp {
+    color: white;
+    font-size: 40px;
+    line-height: 20px;
+}
+
+#temp_max {
+    color: white;
+    opacity: 0.8;
+}
+
+.searchBox {
     display: flex;
     justify-content: center;
-
+    margin: 1em auto;
     /* border: 2px solid rgb(76, 253, 91); */
 }
 
@@ -23,51 +52,34 @@ body {
     /* border: 2px solid rgb(252, 147, 199); */
 }
 
-
-.container {
-    width: 20em;
-    background-color: rgba(131, 130, 130, 0.09);
-    border-radius: 0.5em;
-    margin: 1em auto;
-    padding-top: 0.1em;
-    padding-left: 1em;
-    padding-bottom: 0.1em;
-
-    /* border: 2px solid green; */
-}
-
-
-.min_max_temp {
-
-    /* border: 2px solid rgb(8, 121, 155); */
-}
-
-.temp_min {
-    margin-left: 1em;
-    /* border: 2px solid rgb(8, 155, 82); */
-}
-
-
-.details {
-    /* text-align: center; */
-    padding-top: 0.1em;
-
-    /* border: 2px solid rgb(128, 194, 6); */
-}
-
-.reading {
+.dataAll {
     display: flex;
-    justify-content: space-between;
-    /* border: 2px solid rgb(214, 6, 93); */
+    justify-content: center;
 }
 
-.name_reading {
-
-    /* border: 2px solid rgb(214, 148, 6); */
+.dataHidden {
+    background-color: white;
+    width: 20em;
+    line-height: 8px;
+    padding: 13px;
+    border-radius: 0.5em;
+    box-shadow: 0px 1px 4px #a5a5a5;
 }
 
-.results {
-    padding-right: 2em;
-
-    /* border: 2px solid rgb(32, 30, 26); */
+.dataTitle {
+    font-size: 17px;
 }
+
+.data {
+    opacity: 0.5;
+}
+
+.sun {
+    display: flex;
+    justify-content: baseline;
+}
+
+.sunrise {
+    margin-right: 25px;
+}
+

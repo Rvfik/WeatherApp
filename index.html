@@ -9,103 +9,69 @@
 </head>
 
 <body>
-  <div class="SearchBox">
-    <div class="citySearchBox">
-      <input class="form-control mr-sm-2" id="citySearch" placeholder="Type your city here...">
-      <button class="btn btn-outline-success" id="citySearchButton">Szukaj<i class="fab fa-searchengin"></i></button>
-      <div id="searchErrorMessage"></div>
-    </div>
-  </div>
 
-  <div class="container col-11 col-sm-4 col-md-6 col-lg-5 col-xl-4">
-    <h1 id="temp"></h1>
-    <h3 id="cityName"></h3>
-    <h id="country"></h>
-    <!-- <div class="min_max_temp"> -->
-    <p id="temp_max"></p>
-    <!-- <p  id="temp_min"></p> -->
-    <!-- </div> -->
-    <div>
-      <p id="description"></p>
-    </div>
-  </div>
+  <div class="weatherBox">
 
-  <div class="container col-11 col-sm-3 col-md-5 col-lg-4 col-xl-3">
-    <div class="details">
-      <h3>Details</h3>
-      <hr />
+    <!-- baner pogdy -->
+
+    <div class="container">
+      <p id="cityName"></p>
+      <p id="temp"></p>
+      <p id="country"></p>
+      <p id="temp_max"></p>
     </div>
-    <div class="reading">
-      <div class="name_reading">
-        <p>Humidity</p>
-        <p>Visibility</p>
-        <p>Clouds</p>
-      </div>
-      <div class="results">
-        <p id="humidity"></p>
-        <p id="visibility"></p>
-        <p id="clouds"></p>
-      </div>
-    </div>
-    <hr />
-    <div class="details">
-      <h3>Wind and pressure</h3>
-      <hr />
-    </div>
-    <div class="reading">
-      <div class="name_reading">
-        <p>Speed</p>
-        <p>Pressure</p>
-        <p>Wind direction</p>
-      </div>
-      <div class="results">
-        <p id="windSpeed"></p>
-        <p id="pressure"></p>
-        <p id="windDeg"></p>
+
+    <!-- Wyszukiwarka -->
+    <div class="searchBox">
+      <div class="citySearchBox">
+        <input class="form-control mr-sm-2" id="citySearch" placeholder="Type your city here...">
+        <button class="btn btn-outline-warning" id="citySearchButton">Szukaj<i class="fab fa-searchengin"></i></button>
+        <div id="searchErrorMessage"></div>
       </div>
     </div>
-    <hr />
-    <div class="details">
-      <h3>Sun</h3>
-      <hr />
-    </div>
-    <div class="reading">
-      <div class="name_reading">
-        <p>unrise</p>
-        <p>Sunset</p>
-      </div>
-      <div class="results">
-        <p id="sunrise"></p>
-        <p id="sunset"></p>
+
+    <!-- baner szczegułów -->
+    <div class="dataAll">
+      <div class="dataHidden">
+        <section id="pressure-section">
+          <p class="dataTitle">Pressure</p>
+          <p class="data" id="pressure"></p>
+        </section>
+        <hr />
+        <section id="humidity-section">
+          <p class="dataTitle">Humidity</p>
+          <p class="data" id="humidity"></p>
+        </section>
+        <hr />
+        <section id="wind-section">
+          <p class="dataTitle">Wind</p>
+          <!-- <p class="data" id="windDeg"></p> -->
+          <p class="data" id="windSpeed"></p>
+        </section>
+        <hr />
+        <section id="visibility-section">
+          <p class="dataTitle">Visibility</p>
+          <p class="data" id="visibility"></p>
+          <p class="data" id="clouds"></p>
+          <!-- <p class="data" id="description"></p> -->
+        </section>
+        <hr />
+        <section id="sun-section">
+          <div class="sun">
+            <div class="sunrise">
+              <p class="dataTitle">Sunrise</p>
+              <p class="data" id="sunrise"></p>
+            </div>
+            <div class="sunset">
+              <p class="dataTitle">Sunset</p>
+              <p class="data" id="sunset"></p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
 
-  </div>
-
-
-
-
-
-  <!-- <p id="clouds"></p>
-    <p id="latitude"></p>
-    <p id="longitude"></p>
-    <p id="humidity"></p>
-    <p id="pressure"></p>
-    <p id="temp"></p>
-    <p id="temp_max"></p>
-    <p id="temp_min"></p>
-    <p id="cityName"></p>
-    <p id="country"></p>
-    <p id="sunrise"></p>
-    <p id="sunset"></p>
-    <p id="visibility"></p>
-    <p id="description"></p>
-    <p id="weatherParameter"></p>
-    <p id="icon"></p>
-    <p id="windDeg"></p>
-    <p id="windSpeed"></p> -->
-  </div>
 </body>
 <script src="/bundle.js"></script>
 
