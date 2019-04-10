@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 document.getElementById('citySearchButton').addEventListener('click', BuildApp)
 
 const getJSONfromAPI = async () => {
@@ -12,7 +13,6 @@ const getJSONfromAPI = async () => {
             return weather;
         }).catch((e) => {
             document.getElementById('searchErrorMessage').textContent = 'Wrong name of the city was typed'
-            console.log(e)
         })
 }
 
@@ -59,6 +59,11 @@ async function getData() {
     // document.getElementById('icon').innerText = `icon: ${icon}`
     // document.getElementById('windDeg').innerText = `${windDeg}°`
     document.getElementById('windSpeed').innerText = `${windSpeed} m/s`
+
+
+    let iconDayHr = response.weather.map(el => el.icon).reduce(icon => icon)
+    let selectnDay = `<img src=http://openweathermap.org/img/w/${iconDayHr}.png width="90" height="90">`;
+    document.getElementById('iconDayHeader').innerHTML = selectnDay;
 }
 
 function Unix_timestamp(t) {
@@ -87,26 +92,24 @@ const getForecastfromAPI = async () => {
 async function getForecast() {
     let response = await getForecastfromAPI();
 
-
     let tempFiveDays = response.list.filter(el => el.dt_txt.includes("12:00:00"));
-    console.log(response.list.filter(el => el))
-
-
 
     let tempForecast = tempFiveDays.map(el => ({
         temp: el.main.temp,
         icon: el.weather.map(item => item.icon).reduce(item => item)
     }));
-    console.log(tempForecast[0].temp)
 
-
+    
     for (let day of tempForecast) {
 
-        let indexOf = tempForecast.indexOf(day)
+        let indexOf = tempForecast.indexOf(day);
         let dayTemp = Math.floor(day.temp - 273.15);
+        let dayIcon = day.icon;
 
-        document.getElementById(`temperatureDay${indexOf + 1}`).innerText = `${dayTemp}° C`
-        // document.getElementById(`iconDay${indexOf + 1}`).innerHTML = `${dayTemp}° C`
+        let selectIconDay = `<img src=http://openweathermap.org/img/w/${dayIcon}.png>`;
+
+        document.getElementById(`temperatureDay${indexOf + 1}`).innerText = `${dayTemp}° C`;
+        document.getElementById(`iconDay${indexOf + 1}`).innerHTML = selectIconDay;
     }
 }
 getForecast()
