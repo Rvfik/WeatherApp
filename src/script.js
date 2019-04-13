@@ -1,13 +1,12 @@
 import axios from 'axios';
 
-
-document.getElementById('citySearchButton').addEventListener('click', BuildApp)
+document.getElementById('citySearchButton').addEventListener('click', getAllData)
 
 const getJSONfromAPI = async () => {
-    const city = document.getElementById('citySearch').value || "wroclaw";
+    const city = document.getElementById('citySearch').value || "Wroclaw";
     document.getElementById('searchErrorMessage').textContent = '';
 
-    return axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=0b72f178992e5ddc7fa93b511b4a5dff`)
+    return axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=0b72f178992e5ddc7fa93b511b4a5dff`)
         .then(response => {
             const weather = response.data
             return weather;
@@ -37,10 +36,6 @@ async function getData() {
     let icon = response.weather[0].icon;
     let windDeg = response.wind.deg;
     let windSpeed = response.wind.speed;
-    // let rain1h = response.rain.1h        // Rain volume for the last 1 hour, mm
-    // let rain3h = response.rain.3h        // Rain volume for the last 3 hours, mm
-    // let snow1h = response.snow.1h        // Snow volume for the last 1 hour, mm
-    // let snow3h = response.snow.3h        // Snow volume for the last 3 hours, mm
 
     document.getElementById('clouds').innerText = `${clouds}%`
     // document.getElementById('latitude').innerText = `latitude: ${latitude}°`
@@ -61,9 +56,9 @@ async function getData() {
     document.getElementById('windSpeed').innerText = `${windSpeed} m/s`
 
 
-    let iconDayHr = response.weather.map(el => el.icon).reduce(icon => icon)
-    let selectnDay = `<img src=http://openweathermap.org/img/w/${iconDayHr}.png width="90" height="90">`;
-    document.getElementById('iconDayHeader').innerHTML = selectnDay;
+    let iconHeaderDay = response.weather.map(el => el.icon).reduce(icon => icon)
+    let selectHeaderDayIcon = `<img src=http://openweathermap.org/img/w/${iconHeaderDay}.png width="90" height="90">`;
+    document.getElementById('iconDayHeader').innerHTML = selectHeaderDayIcon;
 }
 
 function Unix_timestamp(t) {
@@ -77,7 +72,7 @@ function Unix_timestamp(t) {
 getData()
 
 const getForecastfromAPI = async () => {
-    const city = document.getElementById('citySearch').value || "wroclaw";
+    const city = document.getElementById('citySearch').value || "Wroclaw";
 
     return axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=0b72f178992e5ddc7fa93b511b4a5dff`)
         .then(response => {
@@ -114,7 +109,8 @@ async function getForecast() {
 }
 getForecast()
 
-function BuildApp() {
+function getAllData() {
     getData();
     getForecast();
+    document.getElementById('citySearch').value = null;
 }

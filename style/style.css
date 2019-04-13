@@ -54,8 +54,9 @@ body {
 
 .searchBox {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin: 1em auto;
+    margin: 0.8em auto;
     /* border: 2px solid rgb(76, 253, 91); */
 }
 
@@ -153,4 +154,54 @@ body {
     justify-content: center;
 
     /* border: 2px solid rgb(252, 147, 199); */
+}
+
+.ErrorMessageBox {
+
+}
+
+.searchErrorMessage {
+    color: #bb0e0e;
+
+    /* border: 2px solid rgb(13, 199, 6); */
+}
+
+.citySearchBox input[type=text] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    width: 85%;
+    height: 2.5em;
+    background: #ffffff;
+    border-radius: 0.3em;
+    box-shadow: 0px 1px 4px #a5a5a5;
+
+
+
+    /* border: 2px solid rgb(13, 199, 6); */
+}
+
+.citySearchBox button {
+    width: 15%;
+    background: #3e98e8;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3em;
+    box-shadow: 0px 1px 4px #a5a5a5;
+
+    margin-left: 10px;
+
+    /* border: 2px solid rgb(122, 0, 61); */
+}
+
+.citySearchBox button:hover {
+    background: #327ab9;
+}
+
+.citySearchBox::after {
+    content: "";
+    clear: both;
+    display: table;
 }

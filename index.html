@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/style/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -16,21 +17,24 @@
 
     <div class="Header">
       <div class="temperatureDayHeader">
-      <p id="cityName"></p>
-      <p id="temp"></p>
-      <p id="temp_max"></p>
+        <p id="cityName"></p>
+        <p id="temp"></p>
+        <p id="temp_max"></p>
       </div>
       <div class="iconDayHeader" id="iconDayHeader"></div>
     </div>
 
     <!-- Wyszukiwarka -->
     <div class="searchBox">
-      <div class="citySearchBox">
-        <input class="form-control mr-sm-2" id="citySearch" placeholder="Type your city here...">
-        <button class="btn btn-warning" id="citySearchButton">Szukaj<i class="fab fa-searchengin"></i></button>
-        <div id="searchErrorMessage"></div>
+      <div class="citySearchBox" style="margin:auto;max-width:360px">
+        <input type="text" id="citySearch" placeholder="Type your city here...">
+        <button type="submit" id="citySearchButton"><i class="fa fa-search"></i></button>
       </div>
+        <div class="searchErrorMessage" id="searchErrorMessage"></div>
     </div>
+
+    
+
 
     <!-- baner szczegułów -->
     <div class="dataAll">
