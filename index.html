@@ -19,21 +19,30 @@
       <div class="temperatureDayHeader">
         <p id="cityName"></p>
         <p id="temp"></p>
-        <p id="temp_max"></p>
+        <div class="tempMaxAndMin">
+          <div class="tempMax">
+          <i class="fa fa-arrow-up"></i>
+          <p id="tempMax"></p>
+          </div>
+          <div class="tempMin">
+            <i class="fa fa-arrow-down"></i>
+            <p id="tempMin"></p>
+          </div>
+        </div>
       </div>
       <div class="iconDayHeader" id="iconDayHeader"></div>
     </div>
 
     <!-- Wyszukiwarka -->
     <div class="searchBox">
-      <div class="citySearchBox" style="margin:auto;max-width:360px">
+      <div class="citySearchBox">
         <input type="text" id="citySearch" placeholder="Type your city here...">
         <button type="submit" id="citySearchButton"><i class="fa fa-search"></i></button>
       </div>
-        <div class="searchErrorMessage" id="searchErrorMessage"></div>
+      <div class="searchErrorMessage" id="searchErrorMessage"></div>
     </div>
 
-    
+
 
 
     <!-- baner szczegułów -->
@@ -58,7 +67,6 @@
         <section id="visibility-section">
           <p class="dataTitle">Visibility</p>
           <p class="data" id="visibility"></p>
-          <p class="data" id="clouds"></p>
           <!-- <p class="data" id="description"></p> -->
         </section>
         <hr />

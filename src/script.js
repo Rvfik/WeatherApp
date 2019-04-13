@@ -24,8 +24,8 @@ async function getData() {
     let humidity = response.main.humidity;
     let pressure = response.main.pressure;
     let temp = Math.floor(response.main.temp - 273.15);
-    let temp_max = Math.floor(response.main.temp_max - 273.15);
-    let temp_min = Math.floor(response.main.temp_min - 273.15);
+    let tempMax = Math.floor(response.main.temp_max - 273.15);
+    let tempMin = Math.floor(response.main.temp_min - 273.15);
     let cityName = response.name;
     let country = response.sys.country;
     let sunrise = Unix_timestamp(response.sys.sunrise);
@@ -37,14 +37,14 @@ async function getData() {
     let windDeg = response.wind.deg;
     let windSpeed = response.wind.speed;
 
-    document.getElementById('clouds').innerText = `${clouds}%`
+    // document.getElementById('clouds').innerText = `${clouds}%`
     // document.getElementById('latitude').innerText = `latitude: ${latitude}°`
     // document.getElementById('longitude').innerText = `longitude: ${longitude}°`
     document.getElementById('humidity').innerText = `${humidity}%`
     document.getElementById('pressure').innerText = `${pressure} hPa`
     document.getElementById('temp').innerText = `${temp}° C`
-    document.getElementById('temp_max').innerText = `max ${temp_max}° C min ${temp_min}° C`
-    // document.getElementById('temp_min').innerText = `min ${temp_min}° C`
+    document.getElementById('tempMax').innerText = `${tempMax}° C`
+    document.getElementById('tempMin').innerText = `${tempMin}° C`
     document.getElementById('cityName').innerText = `${cityName}, ${country}`
     document.getElementById('sunrise').innerText = `${sunrise}`
     document.getElementById('sunset').innerText = `${sunset}`

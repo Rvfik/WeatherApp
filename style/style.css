@@ -16,7 +16,7 @@ body {
 
 .Header {
     display: flex;
-    
+
     background-color: #3e98e8;
     border-radius: 0.5em;
     padding: 12px;
@@ -47,9 +47,32 @@ body {
     line-height: 20px;
 }
 
-#temp_max {
+.tempMaxAndMin {
+    display: inline-flex;
     color: white;
     opacity: 0.8;
+    /* border: 2px solid rgb(0, 158, 71); */
+}
+
+.fa-arrow-up {
+    margin-right: 7px;
+}
+
+.fa-arrow-down {
+    margin-right: 7px;
+}
+
+.tempMax {
+    display: inline-flex;
+
+    margin-right: 10px;
+    /* border: 2px solid rgb(230, 178, 7); */
+}
+
+.tempMin {
+
+    display: inline-flex;
+    /* border: 2px solid rgb(0, 17, 73); */
 }
 
 .searchBox {
@@ -156,9 +179,7 @@ body {
     /* border: 2px solid rgb(252, 147, 199); */
 }
 
-.ErrorMessageBox {
-
-}
+.ErrorMessageBox {}
 
 .searchErrorMessage {
     color: #bb0e0e;
@@ -168,6 +189,8 @@ body {
 
 .citySearchBox input[type=text] {
     padding: 10px;
+    margin: auto;
+    width: 100%;
     font-size: 16px;
     border: none;
     width: 85%;
